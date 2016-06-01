@@ -1,0 +1,339 @@
+# @ = vowel
+# % = conson
+# . = end
+# * = remaining
+# A:B = A is returned as is, B is recursively fed to sonnex
+
+# Grammar:
+# endofline = "\n"
+# conson = "%"
+# vowel = "@"
+# remains = "*"
+# letter = conson | vowel | "a" | "b" | "c" | ...
+# sound = "a" | "b" | "E" | ...
+# endofword = "."
+# transform = "->"
+# output = ":"
+# line = space* . (rule . space*)? . comment? . endofline
+# comment = "#" . char* . endofline
+# rule = trigger . space* . transform . space* . action
+# trigger = letter+ . (endofword | remains)
+# action = sound* . (output . letter* . remains)?
+
+# Starting with e
+e. ->               # arbitre, file
+ec. -> Ek           # bec
+ef. -> Ef           # chef
+eaux. -> o          # peaux, chapeaux
+eann* -> an:*       # jeanne, jeannette
+ean* -> 2:*         # jean, plongeant
+eff* -> Ef:*        # effacer, greffé
+egm* -> E:gm*       # flegme
+ein. -> 1           # frein, plein
+einn* -> En:*       #
+ein@* -> En:@*      # freiner, peiner
+ein* -> 1:*         # peinture, feinte
+ei* -> E:*          # seigle, seize
+ell* -> El:*        # belle, margelle
+el%* -> E:l%*       # celtique
+el* -> e:l*         # cela, peler
+emm* -> Em:*        # flemme
+emp* -> 2:p*        # empire, emphase
+enn* -> En:*        # ennemi, benne
+en. -> 2            # en
+ent. ->             # posent, mangent
+en@* -> en:@*       # fenaison, gangrena
+en* -> 2:*          # entrer, pente
+er. -> E            # siffler, parler
+ert. -> Er          # expert, offert
+err* -> Er:*        # erreur, terre
+erf* -> Er:f*       # performance, superficiel
+es. ->              # pentes, blanches
+esch* -> EC:*       # esche
+essent. -> Es       # confessent, dressent
+esh* -> E:h*        #
+esn* -> E:n*        # chevesne, mesnil
+ess* -> Es:*        # essence, pressentir
+es%* -> Es:%*       # pester, empester
+es* -> ez:*         # pesant, parmesan
+ett* -> Et:*        # luette, patinette
+et. -> E            # et, perroquet
+et* -> et:*
+eun@* -> en:@*      # jeune
+eun* -> 1:*         # jeun
+eux. -> e           # eux, paresseux
+euxi* -> ez:i*      # deuxième
+eu* -> e:*          # bleuté
+ex. -> Eks          # ex, index
+ey%* -> E:%*
+ey* -> E:y*
+ez. -> E
+e* -> e:*
+
+# Starting with s
+s. ->
+ss* -> s:*
+st* -> st:*
+sci* -> s:i*
+s* -> s:*
+
+# Starting with a
+a. -> a
+ap. -> ap           # lap
+aient. -> E
+ain. -> 1
+ain@* -> E:n@*
+ain* -> 1:*
+ais. -> E
+aiss* -> Es:*
+ais@* -> Ez:@*
+ais* -> Es:*
+ail. -> ai
+aill* -> ai:*
+ai* -> E:*
+amm* -> am:*
+am@* -> am:@*
+am* -> 2:*
+an. -> 2
+ann* -> an:*
+ant. -> 2
+ante* -> 2t:e*
+an@* -> an:@*
+an* -> 2:*
+as. -> a
+assent. -> as
+ass* -> as:*
+as%* -> as:%*
+as* -> az:*
+au* -> o:*
+ay. -> E
+ays. -> E
+a* -> a:*
+
+# Starting with i
+ic. -> ik
+ip. -> ip           # leadership
+ics. -> ik
+ienn* -> iEn:*
+ien* -> i1:*
+in. -> 1
+inn* -> in:*
+in@* -> in:@*
+in* -> 1:*
+issent. -> is
+is. -> i
+iss* -> is:*
+is%* -> is:%*
+is* -> iz:*
+ixi* -> iz:i*
+ill* -> i:*
+i* -> i:*
+
+# Starting with t
+t. ->
+ts. ->
+tier* -> t:ier*
+ti@* -> s:i@*
+ti* -> t:i*
+tt* -> t:*
+t* -> t:*
+
+# Starting with n
+nn* -> n:*
+n* -> n:*
+
+# Starting with r
+rr* -> r:*
+r* -> r:*
+
+# Starting with u
+un. -> 1
+ussent. -> us
+uss* -> us:*
+us%* -> us:%*
+us* -> uz:*
+u* -> u:*
+
+# Starting with l
+ll* -> l:*
+l* -> l:*
+
+# Starting with o
+occ* -> ok:*        # occasion, occurence
+oeu* -> e:*         # oeuf, boeuf
+œu* -> e:*          # œuf, bœuf
+oient. -> Ua        # voient
+oin* -> U1:*        # oindre, joint
+ois%* -> Ua:s*      # poisse
+ois* -> Uaz:*       # loisir
+oi* -> Ua:*         # loir
+omm* -> om:*
+om@* -> om:@*
+om* -> 3:*
+onn* -> on:*        # connexion
+on@* -> on:@*
+on* -> 3:*          # conte
+ossent. -> os       # bossent, cabossent
+oss* -> os:*        # possible
+os%* -> os:%*       # poste
+os* -> oz:*         # poser, doser
+ou* -> U:*          # ouste
+où* -> U:*          # où
+oû* -> U:*
+o* -> o:*
+
+# Starting with d
+d. ->               # poid
+ds. ->              # poids
+dd* -> d:*          # addition
+d* -> d:*           # demain, direct
+
+# Starting with c
+c. ->               # blanc
+ca* -> k:a*         # bécasse, cadeau
+cco* -> k:o*        # accorder, accordéon
+ccu* -> k:u*        # occuper
+cc* -> ks:*         # accéder
+ce* -> s:e*         # cerise
+c'* -> s:*          # c'est
+c’* -> s:*          # c’est
+chao* -> k:ao*      # chaos, chaotique
+chl* -> kl:*        # Chloé
+choe* -> k:oe*      # choeur
+chœ* -> k:oe*       # chœur
+chr* -> kr:*        # chrome, chrétien
+ch* -> C:*          # chômage, chercher
+ci* -> s:i*         # percil
+ck* -> k:*          # stock, déstockage
+coeu* -> k:oeu*     # coeur
+cœu* -> k:oeu*      # cœur
+compt* -> k3t:*     # compter, comptable
+co* -> k:o*         # concours, cordonnier
+cuei* -> ke:i*      # cueillette
+cu* -> k:u*         # cumin, percussion
+cy* -> s:y*         # cyclone, anticyclone
+c* -> k:*
+
+# Starting with p
+p. ->               # camp, loup
+ps. ->
+ph* -> f:*
+pp* -> p:*
+pays* -> pE:is*
+p* -> p:*
+
+# Starting with m
+mm* -> m:*          # comme, comment
+m* -> m:*           # mérite, mentir
+
+# Starting with é
+é. -> E             # mangé, plié
+éen. -> E1          # européen
+éens. -> E1         # européens
+éss* -> Es:*        #
+és%* -> Es:%*       # téléspectateur, déspécialisation
+és. -> E            # tirés, floutés
+és* -> Ez:*         # désir, hésiter
+é* -> E:*           # éclairer, émincer
+
+# Starting with v
+v* -> v:*           # vivant, vert
+
+# Starting with q
+qur* -> ku:r*       # piqure
+qu* -> k:*          # quel, pique
+q* -> k:*           # cinq, coq
+
+# Starting with f
+ff* -> f:*          # affamé, affaibli
+f* -> f:*           # fermer, frein
+
+# Starting with b
+b. ->               # plomb
+bb* -> b:*          # sabbatique, scrabble
+b* -> b:*           # blond, barbelé
+
+# Starting with g
+g. ->               # sang
+ge. -> j            # grange, mange
+ge* -> j:e*         # manger, mangent
+gé* -> jE:*
+gi* -> ji:*
+gn* -> n:*
+gy* -> j:y*
+guë* -> gu:*
+gun* -> g:un*       # lagune, lagunaire
+gu* -> g:*
+gg* -> g:*
+g* -> g:*
+
+# Starting with h
+h* -> :*
+
+# Starting with j
+j* -> j:*
+
+# Starting with à
+à* -> a:*
+
+# Starting with x
+x. ->
+xc* -> ks:*
+x@* -> kz:@*
+x* -> ks:*
+
+# Starting with y
+y* -> i:*
+
+# Starting with è
+è* -> E:*
+
+# Starting with ê
+êt* -> E:t*
+ê* -> E:*
+
+# Starting with z
+zz* -> z:*
+z* -> z:*
+
+# Starting with w
+w* -> v:*
+
+# Starting with ç
+ç* -> s:*
+
+# Starting with ù
+ù* -> u:*
+
+# Starting with k
+k* -> k:*
+
+# Starting with î
+î* -> i:*
+
+# Starting with œ
+œ* -> e:*
+
+# Starting with ï
+ï* -> i:*
+
+# Starting with ël
+ë. ->
+ël* -> E:l*
+
+# Starting with ô
+ô* -> o:*
+
+# Starting with ö
+ö* -> o:*
+
+# Starting with û
+û* -> u:*
+
+# Apostroph is ignored/silent
+'* -> :*
+’* -> :*
+
+# Starting with â
+ât* -> a:t*
+â* -> a:*

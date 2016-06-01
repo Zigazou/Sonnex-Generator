@@ -1,0 +1,34 @@
+<?php
+function _sonnex_is_vowel($char) {
+  static $VOWELS = array(
+  'a', 'â', 'à', 'ä', 'e', 'é', 'è', 'ê', 'ë', 'i', 'î', 'ï', 'o', 'ô',
+  'ö', 'u', 'ù', 'û', 'ü', 'y', 'œ'
+  );
+
+  return in_array($char, $VOWELS);
+}
+
+function _sonnex_is_conson($char) {
+  static $CONSONS = array(
+  'b', 'c', 'ç', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'm', 'n', 'p', 'q',
+  'r', 's', 't', 'v', 'w', 'x', 'y', 'z'
+  );
+
+  return in_array($char, $CONSONS);
+}
+
+function _sonnex_sonx($st) {
+  if($st == "") return "";
+
+  $length = mb_strlen($st);
+  $tail = mb_substr($st, 1);
+  $st1 = mb_substr($st, 0, 1);
+  $st2 = "";
+  $st3 = "";
+  $st4 = "";
+  $st5 = "";
+
+  if ($length >= 5) $st5 = mb_substr($st, 0, 5);
+  if ($length >= 4) $st4 = mb_substr($st, 0, 4);
+  if ($length >= 3) $st3 = mb_substr($st, 0, 3);
+  if ($length >= 2) $st2 = mb_substr($st, 0, 2);
