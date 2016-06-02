@@ -13,7 +13,8 @@ Sonnex’s Characteristic:
 
 - each letter produces a sound, there is no silent letter,
 - each letter always produces the same sound,
-- complex sounds are simplified.
+- complex sounds are simplified,
+- result use only ASCII characters.
 
 The string must contain only one word.
 The Sonnex code contains the following characters:

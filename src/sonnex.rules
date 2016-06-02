@@ -22,25 +22,26 @@
 
 # Start of word
 .aqua* -> akU:a*    # aquarelle, aquatique
-.clef. -> klE
-.clefs. -> klE
-.cerf. -> sEr
-.cerfs. -> sEr
-.de. -> de
-.est. -> E
-.es. -> E
-.les. -> lE
-.mer. -> mEr
-.mers. -> mEr
-.mes. -> mE
-.ressent. -> res2
-.serf. -> sEr
-.serfs. -> sEr
-.sept. -> sEt
-.septiè* -> sEt:iè*
-.ses. -> sE
-.tes. -> tE
-.tien* -> t:ien*
+.clef. -> klE       # clef
+.clefs. -> klE      # clefs
+.cerf. -> sEr       # cerf
+.cerfs. -> sEr      # cerfs
+.de. -> de          # de
+.emm* -> 2m:*       # emmener, emmagasiner
+.est. -> E          # est
+.es. -> E           # es
+.les. -> lE         # les
+.mer. -> mEr        # mer
+.mers. -> mEr       # mers
+.mes. -> mE         # mes
+.ressent. -> res2   # ressent
+.serf. -> sEr       # serf
+.serfs. -> sEr      # serfs
+.sept. -> sEt       # sept
+.septiè* -> sEt:iè* # septième, septièmes
+.ses. -> sE         # ses
+.tes. -> tE         # tes
+.tien* -> t:ien*    # tien, tiens, tiennes
 
 # Starting with e
 e. ->               # arbitre, file
@@ -204,11 +205,11 @@ oin* -> U1:*        # oindre, joint
 ois%* -> Ua:s*      # poisse
 ois* -> Uaz:*       # loisir
 oi* -> Ua:*         # loir
-omm* -> om:*
-om@* -> om:@*
-om* -> 3:*
+omm* -> om:*        # comme
+om@* -> om:@*       # coma
+om* -> 3:*          # pompe
 onn* -> on:*        # connexion
-on@* -> on:@*
+on@* -> on:@*       # gonade
 on* -> 3:*          # conte
 ossent. -> os       # bossent, cabossent
 oss* -> os:*        # possible
