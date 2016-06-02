@@ -44,10 +44,11 @@ en. -> 2            # en
 ent. ->             # posent, mangent
 en@* -> en:@*       # fenaison, gangrena
 en* -> 2:*          # entrer, pente
+epp* -> Ep:*        # steppe, peppermint
+ep%* -> Ep:%*       # peptide, pepse
 er. -> E            # siffler, parler
-ert. -> Er          # expert, offert
 err* -> Er:*        # erreur, terre
-erf* -> Er:f*       # performance, superficiel
+er%* -> Er:%*       # supers, supporters
 es. ->              # pentes, blanches
 esch* -> EC:*       # esche
 essent. -> Es       # confessent, dressent
@@ -63,99 +64,111 @@ eun@* -> en:@*      # jeune
 eun* -> 1:*         # jeun
 eux. -> e           # eux, paresseux
 euxi* -> ez:i*      # deuxième
+eussent. -> us      # eussent
+euss* -> us:*       # eusse, eussiez
+eus@* -> ez:@*      # laguneuse
 eu* -> e:*          # bleuté
-ex. -> Eks          # ex, index
-ey%* -> E:%*
-ey* -> E:y*
-ez. -> E
+ex@* -> Ekz:@*      # exercice, exécuter
+ex* -> Eks:*        # ex, index
+ey. -> E            # poney
+ey%* -> E:%*        # trolleybus
+ey* -> E:y*         # mareyage, seyant
+ez. -> E            # filez, dormez
 e* -> e:*
 
 # Starting with s
-s. ->
-ss* -> s:*
-st* -> st:*
-sci* -> s:i*
+s. ->               # mains, champs
+ss* -> s:*          # pass, stress
+st* -> st:*         # stress, style
+sci* -> s:i*        # science, conscience
 s* -> s:*
 
 # Starting with a
-a. -> a
+a. -> a             # lapa, ta
 ap. -> ap           # lap
-aient. -> E
-ain. -> 1
-ain@* -> E:n@*
-ain* -> 1:*
-ais. -> E
-aiss* -> Es:*
-ais@* -> Ez:@*
-ais* -> Es:*
-ail. -> ai
-aill* -> ai:*
-ai* -> E:*
-amm* -> am:*
-am@* -> am:@*
-am* -> 2:*
-an. -> 2
-ann* -> an:*
-ant. -> 2
-ante* -> 2t:e*
-an@* -> an:@*
-an* -> 2:*
-as. -> a
-assent. -> as
-ass* -> as:*
-as%* -> as:%*
-as* -> az:*
-au* -> o:*
-ay. -> E
-ays. -> E
+aps. -> ap          # handicaps
+apt. -> apt         # rapt
+apts. -> apt        # rapts
+aient. -> E         # tapaient, flirtaient
+ain. -> 1           # pain, demain
+ain@* -> E:n@*      # haine, aubaine
+ain* -> 1:*         # sainte
+ais. -> E           # délirais, loupais
+aiss* -> Es:*       # paraisse, épaisse
+ais@* -> Ez:@*      # aise, chaisière
+ais* -> Es:*        # faisceau
+ail. -> ai          # ail, bail
+aill* -> ai:*       # aille, braille
+ai* -> E:*          # défaite, bouchonnai
+amm* -> am:*        # flamme, gamma
+am@* -> am:@*       # rame
+am* -> 2:*          # amplification, rampe
+an. -> 2            # bilan, clan
+ann* -> an:*        # anne, hanneton
+ant. -> 2           # enfant, confiant
+ante* -> 2t:e*      # confiante, infanterie
+an@* -> an:@*       # analyse, banal
+an* -> 2:*          # anse, antérieur
+as. -> a            # bas, foulas
+assent. -> as       # tassent, passent
+ass* -> as:*        # lassant, harassa
+as%* -> as:%*       # aspirer, pastèque
+as* -> az:*         # asie, rasoir
+au* -> o:*          # au, instaurer
+ay. -> E            # bray, spray
+ays. -> E           # gays, tramways
 a* -> a:*
 
 # Starting with i
 ic. -> ik
 ip. -> ip           # leadership
-ics. -> ik
-ienn* -> iEn:*
-ien* -> i1:*
-in. -> 1
-inn* -> in:*
-in@* -> in:@*
-in* -> 1:*
-issent. -> is
-is. -> i
-iss* -> is:*
-is%* -> is:%*
-is* -> iz:*
-ixi* -> iz:i*
-ill* -> i:*
+ics. -> ik          # pics, syndics
+ienn* -> iEn:*      # triennal, Étienne
+ien* -> i1:*        # rien, bienséance
+ier. -> iE          # séculier, tablier
+iers. -> iE         # tenanciers, tripiers
+in. -> 1            # pin, boudin
+inn* -> in:*        # finnois, djinn
+in@* -> in:@*       # fulminer, ruminer
+in* -> 1:*          # intention, pinte
+issent. -> is       # trahissent, ratissent
+is. -> i            # pris, dénis
+iss* -> is:*        # tapisser, glissant
+is%* -> is:%*       # hémisphère, jurisprudence
+is* -> iz:*         # prise, risible
+ixiè* -> iziE:*     # dixième, sixième
+ill* -> i:*         # vrille, pastille
 i* -> i:*
 
 # Starting with t
-t. ->
-ts. ->
-tier* -> t:ier*
-ti@* -> s:i@*
-ti* -> t:i*
-tt* -> t:*
+t. ->               # îlot, évaluât
+ts. ->              # étreints, états
+tier* -> t:ier*     # parmentier, tiers
+ti@* -> s:i@*       # direction, patient
+ti* -> t:i*         # stomatite, strapontin
+top. -> top         # stop, top
+tt* -> t:*          # patte
 t* -> t:*
 
 # Starting with n
-nn* -> n:*
+nn* -> n:*          # déconne, panne
 n* -> n:*
 
 # Starting with r
-rr* -> r:*
+rr* -> r:*          # tintamarre, torrent
 r* -> r:*
 
 # Starting with u
-un. -> 1
-ussent. -> us
-uss* -> us:*
-us%* -> us:%*
-us* -> uz:*
+un. -> 1            # un, tribun
+us. -> u            # abus, intrus
+ussent. -> us       # fussent, voulussent
+uss* -> us:*        # fussiez
+us%* -> us:%*       # ustensile, rustique
+us* -> uz:*         # usine, rusé
 u* -> u:*
 
 # Starting with l
-ll* -> l:*
+ll* -> l:*          # ballon, tulle
 l* -> l:*
 
 # Starting with o
@@ -216,7 +229,7 @@ c* -> k:*
 
 # Starting with p
 p. ->               # camp, loup
-ps. ->
+ps. ->              # camps, interromps
 ph* -> f:*
 pp* -> p:*
 pays* -> pE:is*
@@ -257,43 +270,44 @@ b* -> b:*           # blond, barbelé
 g. ->               # sang
 ge. -> j            # grange, mange
 ge* -> j:e*         # manger, mangent
-gé* -> jE:*
-gi* -> ji:*
-gn* -> n:*
-gy* -> j:y*
-guë* -> gu:*
-gun* -> g:un*       # lagune, lagunaire
-gu* -> g:*
-gg* -> g:*
+gé* -> jE:*         # génial, congénital
+gi* -> ji:*         # girafe, plagier
+gn* -> n:*          # gagner, cagneux
+gy* -> j:y*         # gyroscope
+gu. -> gu           # aigu, ambigu
+gu%* -> g:u%*       # ambigus, lagune, régulier
+guë* -> gu:*        # aiguë
+gu* -> g:*          # guéri, guêt
+gg* -> g:*          # agglomération
 g* -> g:*
 
 # Starting with h
-h* -> :*
+h* -> :*            # hanter
 
 # Starting with j
-j* -> j:*
+j* -> j:*           # jaune
 
 # Starting with à
-à* -> a:*
+à* -> a:*           # delà
 
 # Starting with x
-x. ->
-xc* -> ks:*
-x@* -> kz:@*
+x. ->               # prix, choix
+xc* -> ks:*         # excuse
+x@* -> kz:@*        # xavier
 x* -> ks:*
 
 # Starting with y
-y* -> i:*
+y* -> i:*           # yen
 
 # Starting with è
 è* -> E:*
 
 # Starting with ê
-êt* -> E:t*
+êt* -> E:t*         # être, forêt
 ê* -> E:*
 
 # Starting with z
-zz* -> z:*
+zz* -> z:*          # pizza
 z* -> z:*
 
 # Starting with w
@@ -317,9 +331,9 @@ k* -> k:*
 # Starting with ï
 ï* -> i:*
 
-# Starting with ël
+# Starting with ë
 ë. ->
-ël* -> E:l*
+ël* -> E:l*         # noël, Joël
 
 # Starting with ô
 ô* -> o:*
@@ -335,5 +349,5 @@ k* -> k:*
 ’* -> :*
 
 # Starting with â
-ât* -> a:t*
+ât* -> a:t*         # âtre
 â* -> a:*
