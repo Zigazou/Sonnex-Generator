@@ -9,12 +9,30 @@ data PlaceHolder = Conson | Vowel deriving (Eq, Show)
 data Letter = Letter Char deriving (Eq, Show)
 data Sound = Sound Char deriving (Eq, Show)
 data Next = EndOfWord | Remains deriving (Eq, Show)
+data Start = StartOfWord deriving (Eq, Show)
 
 -- Complex types
-data Trigger = Trigger [Letter] (Maybe PlaceHolder) Next deriving Show
-data Recursive = Recursive [Letter] (Maybe PlaceHolder) deriving Show
-data Action = Action [Sound] (Maybe Recursive) deriving Show
-data Rule = Rule Trigger Action deriving Show
+data Trigger = Trigger
+    { trStart :: Maybe Start
+    , trLetters :: [Letter]
+    , trPlaceHolder :: Maybe PlaceHolder
+    , trEnd :: Next
+    }  deriving Show
+
+data Recursive = Recursive
+    { reLetters :: [Letter]
+    , rePlaceHolder :: Maybe PlaceHolder
+    } deriving Show
+
+data Action = Action
+    { acSounds :: [Sound]
+    , acRecursive :: Maybe Recursive
+    } deriving Show
+
+data Rule = Rule
+    { ruTrigger :: Trigger
+    , ruAction :: Action
+    } deriving Show
 
 -- Instances
 instance ToString Letter where

@@ -11,6 +11,6 @@ main = do
     let sonnexrulesE = parse rules "sonnex.rules" sonnexfile
 
     case sonnexrulesE of
-        Left error -> print error
+        Left err -> print err
         Right sonnexrules -> putStrLn $ phpRules sonnexrules
 

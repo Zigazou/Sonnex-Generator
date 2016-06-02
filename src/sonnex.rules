@@ -17,13 +17,36 @@
 # line = space* . (rule . space*)? . comment? . endofline
 # comment = "#" . char* . endofline
 # rule = trigger . space* . transform . space* . action
-# trigger = letter+ . (endofword | remains)
+# trigger = endofword? . letter+ . (endofword | remains)
 # action = sound* . (output . letter* . remains)?
+
+# Start of word
+.aqua* -> akU:a*    # aquarelle, aquatique
+.clef. -> klE
+.clefs. -> klE
+.cerf. -> sEr
+.cerfs. -> sEr
+.de. -> de
+.est. -> E
+.es. -> E
+.les. -> lE
+.mer. -> mEr
+.mers. -> mEr
+.mes. -> mE
+.ressent. -> res2
+.serf. -> sEr
+.serfs. -> sEr
+.sept. -> sEt
+.septiè* -> sEt:iè*
+.ses. -> sE
+.tes. -> tE
+.tien* -> t:ien*
 
 # Starting with e
 e. ->               # arbitre, file
 ec. -> Ek           # bec
 ef. -> Ef           # chef
+ef%* -> E:f%*       # cheftaine, chefs
 eaux. -> o          # peaux, chapeaux
 eann* -> an:*       # jeanne, jeannette
 ean* -> 2:*         # jean, plongeant
@@ -52,7 +75,7 @@ er%* -> Er:%*       # supers, supporters
 es. ->              # pentes, blanches
 esch* -> EC:*       # esche
 essent. -> Es       # confessent, dressent
-esh* -> E:h*        #
+esh* -> E:h*        # Deshayes
 esn* -> E:n*        # chevesne, mesnil
 ess* -> Es:*        # essence, pressentir
 es%* -> Es:%*       # pester, empester
@@ -108,6 +131,7 @@ ann* -> an:*        # anne, hanneton
 ant. -> 2           # enfant, confiant
 ante* -> 2t:e*      # confiante, infanterie
 an@* -> an:@*       # analyse, banal
+anh* -> an:*        # anhydride
 an* -> 2:*          # anse, antérieur
 as. -> a            # bas, foulas
 assent. -> as       # tassent, passent
@@ -120,7 +144,7 @@ ays. -> E           # gays, tramways
 a* -> a:*
 
 # Starting with i
-ic. -> ik
+ic. -> ik           # pic
 ip. -> ip           # leadership
 ics. -> ik          # pics, syndics
 ienn* -> iEn:*      # triennal, Étienne

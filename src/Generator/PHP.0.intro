@@ -7,7 +7,9 @@
   $st3 = "";
   $st4 = "";
   $st5 = "";
+  $st6 = "";
 
+  if ($length >= 6) $st6 = mb_substr($st, 0, 6);
   if ($length >= 5) $st5 = mb_substr($st, 0, 5);
   if ($length >= 4) $st4 = mb_substr($st, 0, 4);
   if ($length >= 3) $st3 = mb_substr($st, 0, 3);

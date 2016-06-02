@@ -47,12 +47,20 @@ next = do
         '.' -> return EndOfWord
         _ -> return Remains
 
+start :: GenParser Char st Start
+start = char '.' >> return StartOfWord
+
 trigger :: GenParser Char st Trigger
 trigger = do
+    st <- optionMaybe start
     letters <- many1 (oneOf letterChars)
     ph <- optionMaybe placeholder
     end <- next
-    return $ Trigger (Letter <$> letters) ph end
+    return $ Trigger { trStart = st
+                     , trLetters = Letter <$> letters
+                     , trPlaceHolder = ph
+                     , trEnd = end
+                     }
 
 placeholder :: GenParser Char st PlaceHolder
 placeholder = do
@@ -74,5 +82,7 @@ action = do
             return $ Just $ Recursive (Letter <$> letters) ph
         Nothing -> return Nothing
 
-    return $ Action (Sound <$> sounds) recursive
+    return $ Action { acSounds = Sound <$> sounds
+                    , acRecursive = recursive
+                    }
 

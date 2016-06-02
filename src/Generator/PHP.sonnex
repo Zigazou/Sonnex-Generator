@@ -1,0 +1,13 @@
+// Compute a Sonnex code for a french word.
+//
+// The string must contain only one word".
+// Each character should be considered as being vocal, not silent
+function sonnex_sonnex($st) {
+  static $cache = array();
+
+  $st = mb_strtolower($st);
+
+  if(!isset($cache[$st])) $cache[$st] = _sonnex_sonx0($st);
+
+  return $cache[$st];
+}
