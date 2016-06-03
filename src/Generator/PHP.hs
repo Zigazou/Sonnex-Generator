@@ -37,11 +37,27 @@ groupWeight ((Rule (Trigger _ (Letter a:_) _ _) _):_) =
          Nothing -> 1000
 groupWeight _ = 1000
 
+-- | Give a weight to a subgroup of `Rule` according to letters frequency
+groupWeight2 :: [Rule] -> Int
+groupWeight2 ((Rule (Trigger _ (_:Letter a:_) _ _) _):_) =
+    case elemIndex a frequentLetters of
+         Just i -> i
+         Nothing -> 900
+groupWeight2 ((Rule (Trigger _ [_] _ EndOfWord) _):_) = (-1)
+groupWeight2 ((Rule (Trigger _ [_] _ Remains) _):_) = 1000
+groupWeight2 _ = 950
+
 -- | Checks if two `Rule`’s `Trigger` start with the same letter.
 sameStart :: Rule -> Rule -> Bool
 sameStart (Rule (Trigger _ (a:_) _ _) _) (Rule (Trigger _ (b:_) _ _) _) =
     a == b
 sameStart _ _ = False
+
+-- | Checks if two `Rule`’s `Trigger` start with the same second letter.
+sameStart2 :: Rule -> Rule -> Bool
+sameStart2 (Rule (Trigger _ (_:a:_) _ _) _) (Rule (Trigger _ (_:b:_) _ _) _) =
+    a == b
+sameStart2 _ _ = False
 
 -- | Checks if the `Rule` only works at the start of a word
 firstRule :: Rule -> Bool
@@ -81,10 +97,22 @@ phpRules rs = concat
 -- | Compile a group of `Rule` into PHP code
 phpRules' :: [Rule] -> String
 phpRules' rs = "  if($st1 == \"" ++ first rs ++ "\") {\n"
-            ++ (concat . map phpRule) rs
+            ++ ( concat
+               . map optimize
+               . sortOn groupWeight2
+               . groupBy sameStart2
+               ) rs
             ++ "  }\n"
     where first ((Rule (Trigger _ (Letter a:_) _ _) _):_) = [a]
           first _ = []
+          second ((Rule (Trigger _ (_:Letter a:_) _ _) _):_) = [a]
+          second _ = []
+          -- Optimize subgroups
+          optimize [r] = phpRule r
+          optimize [r1, r2] = phpRule r1 ++ phpRule r2
+          optimize rs' = "  if($sc2 == \"" ++ second rs' ++ "\") {\n"
+                      ++ (concat . map phpRule) rs'
+                      ++ "  }\n"
 
 -- | Compile a single `Rule` into PHP code
 phpRule :: Rule -> String
