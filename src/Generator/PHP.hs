@@ -1,6 +1,6 @@
 {-# LANGUAGE TemplateHaskell #-}
 {-# LANGUAGE FlexibleInstances #-}
-module Generator.PHP where
+module Generator.PHP (phpRules) where
 
 import Data.FileEmbed (embedStringFile)
 import Data.List (groupBy, partition)

@@ -1,16 +1,12 @@
-module Parser.Parser where
-import Text.ParserCombinators.Parsec
-import Text.Parsec.Char
+module Parser.Parser (rules) where
+import Text.ParserCombinators.Parsec ( GenParser, oneOf, optionMaybe, many1
+                                     , string, many, eof, noneOf
+                                     )
+import Text.Parsec.Char (char, endOfLine)
 import Data.Maybe (catMaybes)
 import Control.Monad (liftM)
 
 import Type.Rule
-
-vowelChars :: String
-vowelChars = "aâàäeéèêëiîïoôöuùûüyœ"
-
-consonChars :: String
-consonChars = "bcçdfghjklmnpqrstvwxyz"
 
 letterChars :: String
 letterChars = ['a'..'z'] ++ "àâäéèêëîïôöùûüç'’œ"
@@ -85,4 +81,3 @@ action = do
     return $ Action { acSounds = Sound <$> sounds
                     , acRecursive = recursive
                     }
-

@@ -2,8 +2,8 @@ module Main where
 
 import Text.ParserCombinators.Parsec
 
-import Parser.Parser
-import Generator.PHP
+import Parser.Parser (rules)
+import Generator.PHP (phpRules)
 
 main :: IO ()
 main = do
@@ -13,4 +13,3 @@ main = do
     case sonnexrulesE of
         Left err -> print err
         Right sonnexrules -> putStrLn $ phpRules sonnexrules
-
