@@ -1,21 +1,42 @@
 {-# LANGUAGE TemplateHaskell #-}
 {-# LANGUAGE FlexibleInstances #-}
+{- |
+Module      : PHP
+Description : Generate a Sonnex function based on a list of `Rule`
+Copyright   : (c) Frédéric BISSON, 2016
+License     : GPL-3
+Maintainer  : zigazou@free.fr
+Stability   : experimental
+Portability : POSIX
+-}
 module Generator.PHP (phpRules) where
 
 import Data.FileEmbed (embedStringFile)
 import Data.List (groupBy, partition)
 
-import Type.Rule
+import Type.Rule ( Rule(Rule)
+                 , Trigger(Trigger)
+                 , Action(Action)
+                 , Recursive(Recursive)
+                 , Next(EndOfWord, Remains)
+                 , Letter(Letter)
+                 , Start(StartOfWord)
+                 , PlaceHolder(Conson, Vowel)
+                 , toString
+                 )
 
+-- | Checks if two `Rule`’s `Trigger` start with the same letter.
 sameStart :: Rule -> Rule -> Bool
 sameStart (Rule (Trigger _ (a:_) _ _) _) (Rule (Trigger _ (b:_) _ _) _) =
     a == b
 sameStart _ _ = False
 
+-- | Checks if the `Rule` only works at the start of a word
 firstRule :: Rule -> Bool
 firstRule (Rule (Trigger (Just StartOfWord) _ _ _) _) = True
 firstRule _ = False
 
+-- | Compile a list of `Rule` into PHP code
 phpRules :: [Rule] -> String
 phpRules rs = concat
     [ "<?php\n"
@@ -41,6 +62,7 @@ phpRules rs = concat
           (frs, rs') = partition firstRule rs
           srs = groupBy sameStart rs'
 
+-- | Compile a group of `Rule` into PHP code
 phpRules' :: [Rule] -> String
 phpRules' rs = "  if($st1 == \"" ++ first rs ++ "\") {\n"
             ++ (concat . map phpRule) rs
@@ -48,9 +70,11 @@ phpRules' rs = "  if($st1 == \"" ++ first rs ++ "\") {\n"
     where first ((Rule (Trigger _ (Letter a:_) _ _) _):_) = [a]
           first _ = []
 
+-- | Compile a single `Rule` into PHP code
 phpRule :: Rule -> String
 phpRule (Rule t a) = "    " ++ phpTrigger t ++ " " ++ phpAction t a ++ "\n"
 
+-- | Compile a `Trigger` into PHP code
 phpTrigger :: Trigger -> String
 phpTrigger (Trigger _ ls Nothing EndOfWord) =
     "if($st == \"" ++ toString ls ++ "\")"
@@ -71,9 +95,11 @@ phpTrigger (Trigger _ ls (Just Vowel) EndOfWord) =
     \$st" ++ show (length ls) ++ " == \"" ++ toString ls ++ "\" and \
     \_sonnex_is_vowel(mb_substr($st, "++ show (length ls) ++", 1)))"
 
+-- | Calculate the length of the constant part of a `Trigger`
 stLength :: Trigger -> String
 stLength (Trigger _ ls _ _) = show (length ls)
 
+-- | Compile an `Action` given its `Trigger` into PHP code
 phpAction :: Trigger -> Action -> String
 phpAction _ (Action ss Nothing) = concat
     [ "return '"

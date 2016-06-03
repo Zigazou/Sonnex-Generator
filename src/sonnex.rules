@@ -41,6 +41,7 @@
 .sept. -> sEt       # sept
 .septiè* -> sEt:iè* # septième, septièmes
 .ses. -> sE         # ses
+.sex* -> sEks:*     # sexologue
 .tes. -> tE         # tes
 .tien* -> t:ien*    # tien, tiens, tiennes
 
