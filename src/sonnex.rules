@@ -35,6 +35,7 @@
 .mer. -> mEr        # mer
 .mers. -> mEr       # mers
 .mes. -> mE         # mes
+.news. -> niUz      # news
 .ressent. -> res2   # ressent
 .serf. -> sEr       # serf
 .serfs. -> sEr      # serfs
@@ -148,6 +149,8 @@ ass* -> as:*        # lassant, harassa
 as%* -> as:%*       # aspirer, pastèque
 as* -> az:*         # asie, rasoir
 au* -> o:*          # au, instaurer
+aw. -> o            # sqaw, outlaw
+aws. -> o           # sqaws, outlaws
 ay. -> E            # bray, spray
 ays. -> E           # gays, tramways
 a* -> a:*
@@ -160,6 +163,8 @@ ienn* -> iEn:*      # triennal, Étienne
 ien* -> i1:*        # rien, bienséance
 ier. -> iE          # séculier, tablier
 iers. -> iE         # tenanciers, tripiers
+iew. -> iU          # interview
+iews. -> iU         # interviews
 in. -> 1            # pin, boudin
 inn* -> in:*        # finnois, djinn
 in@* -> in:@*       # fulminer, ruminer
@@ -346,22 +351,24 @@ zz* -> z:*          # pizza
 z* -> z:*
 
 # Starting with w
-w* -> v:*
+w. ->               # show, bungalow
+ws. ->              # shows
+w* -> v:*           # wagon
 
 # Starting with ç
-ç* -> s:*
+ç* -> s:*           # ça
 
 # Starting with ù
 ù* -> u:*
 
 # Starting with k
-k* -> k:*
+k* -> k:*           # kiwi, kaki
 
 # Starting with î
 î* -> i:*
 
 # Starting with œ
-œ* -> e:*
+œ* -> e:*           # œuf, œuvre
 
 # Starting with ï
 ï* -> i:*
