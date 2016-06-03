@@ -12,7 +12,7 @@ Portability : POSIX
 module Generator.PHP (phpRules) where
 
 import Data.FileEmbed (embedStringFile)
-import Data.List (groupBy, partition)
+import Data.List (groupBy, partition, elemIndex, sortOn)
 
 import Type.Rule ( Rule(Rule)
                  , Trigger(Trigger)
@@ -24,6 +24,18 @@ import Type.Rule ( Rule(Rule)
                  , PlaceHolder(Conson, Vowel)
                  , toString
                  )
+
+-- | Letters ordered by the frequency in the french language
+frequentLetters :: String
+frequentLetters = "esaitnrulodcpmévqfbghjàxyèêzwçùkîœïëôöû'’â"
+
+-- | Give a weight to a group of `Rule` according to letters frequency
+groupWeight :: [Rule] -> Int
+groupWeight ((Rule (Trigger _ (Letter a:_) _ _) _):_) =
+    case elemIndex a frequentLetters of
+         Just i -> i
+         Nothing -> 1000
+groupWeight _ = 1000
 
 -- | Checks if two `Rule`’s `Trigger` start with the same letter.
 sameStart :: Rule -> Rule -> Bool
@@ -60,7 +72,11 @@ phpRules rs = concat
           intro0 = $(embedStringFile "src/Generator/PHP.0.intro")
           outro0 = $(embedStringFile "src/Generator/PHP.0.outro")
           (frs, rs') = partition firstRule rs
-          srs = groupBy sameStart rs'
+          {- 2 optimisations:
+             - tests are grouped by their first letter
+             - tests are ordered on letters frequency
+           -}
+          srs = sortOn groupWeight $ groupBy sameStart rs'
 
 -- | Compile a group of `Rule` into PHP code
 phpRules' :: [Rule] -> String

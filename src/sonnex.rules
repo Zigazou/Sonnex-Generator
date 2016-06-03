@@ -47,6 +47,92 @@
 .tes. -> tE         # tes
 .tien* -> t:ien*    # tien, tiens, tiennes
 
+# Starting with a
+a. -> a             # lapa, ta
+ap. -> ap           # lap
+aps. -> ap          # handicaps
+apt. -> apt         # rapt
+apts. -> apt        # rapts
+aient. -> E         # tapaient, flirtaient
+ain. -> 1           # pain, demain
+ain@* -> E:n@*      # haine, aubaine
+ain* -> 1:*         # sainte
+ais. -> E           # délirais, loupais
+aiss* -> Es:*       # paraisse, épaisse
+ais@* -> Ez:@*      # aise, chaisière
+ais* -> Es:*        # faisceau
+ail. -> ai          # ail, bail
+aill* -> ai:*       # aille, braille
+ai* -> E:*          # défaite, bouchonnai
+amm* -> am:*        # flamme, gamma
+am@* -> am:@*       # rame
+am* -> 2:*          # amplification, rampe
+an. -> 2            # bilan, clan
+ann* -> an:*        # anne, hanneton
+ant. -> 2           # enfant, confiant
+ante* -> 2t:e*      # confiante, infanterie
+an@* -> an:@*       # analyse, banal
+anh* -> an:*        # anhydride
+an* -> 2:*          # anse, antérieur
+as. -> a            # bas, foulas
+assent. -> as       # tassent, passent
+ass* -> as:*        # lassant, harassa
+as%* -> as:%*       # aspirer, pastèque
+as* -> az:*         # asie, rasoir
+au* -> o:*          # au, instaurer
+aw. -> o            # sqaw, outlaw
+aws. -> o           # sqaws, outlaws
+ay. -> E            # bray, spray
+ays. -> E           # gays, tramways
+a* -> a:*
+
+# Starting with à
+à* -> a:*           # delà
+
+# Starting with â
+ât* -> a:t*         # âtre
+â* -> a:*
+
+# Starting with b
+b. ->               # plomb
+bb* -> b:*          # sabbatique, scrabble
+b* -> b:*           # blond, barbelé
+
+# Starting with c
+c. ->               # blanc
+ca* -> k:a*         # bécasse, cadeau
+cco* -> k:o*        # accorder, accordéon
+ccu* -> k:u*        # occuper
+cc* -> ks:*         # accéder
+ce* -> s:e*         # cerise
+c'* -> s:*          # c'est
+c’* -> s:*          # c’est
+chao* -> k:ao*      # chaos, chaotique
+chl* -> kl:*        # Chloé
+choe* -> k:oe*      # choeur
+chœ* -> k:oe*       # chœur
+chr* -> kr:*        # chrome, chrétien
+ch* -> C:*          # chômage, chercher
+ci* -> s:i*         # percil
+ck* -> k:*          # stock, déstockage
+coeu* -> k:oeu*     # coeur
+cœu* -> k:oeu*      # cœur
+compt* -> k3t:*     # compter, comptable
+co* -> k:o*         # concours, cordonnier
+cuei* -> ke:i*      # cueillette
+cu* -> k:u*         # cumin, percussion
+cy* -> s:y*         # cyclone, anticyclone
+c* -> k:*
+
+# Starting with ç
+ç* -> s:*           # ça
+
+# Starting with d
+d. ->               # poid
+ds. ->              # poids
+dd* -> d:*          # addition
+d* -> d:*           # demain, direct
+
 # Starting with e
 e. ->               # arbitre, file
 ec. -> Ek           # bec
@@ -107,53 +193,46 @@ ey* -> E:y*         # mareyage, seyant
 ez. -> E            # filez, dormez
 e* -> e:*
 
-# Starting with s
-s. ->               # mains, champs
-shu* -> z:u*        # déshumanisé, transhumance
-sh* -> C:*          # yiddish, shopping
-ss* -> s:*          # pass, stress
-st* -> st:*         # stress, style
-sci* -> s:i*        # science, conscience
-s* -> s:*
+# Starting with é
+é. -> E             # mangé, plié
+éen. -> E1          # européen
+éens. -> E1         # européens
+équa* -> EkU:a*     # équateur, adéquation
+éss* -> Es:*        #
+és%* -> Es:%*       # téléspectateur, déspécialisation
+és. -> E            # tirés, floutés
+és* -> Ez:*         # désir, hésiter
+é* -> E:*           # éclairer, émincer
 
-# Starting with a
-a. -> a             # lapa, ta
-ap. -> ap           # lap
-aps. -> ap          # handicaps
-apt. -> apt         # rapt
-apts. -> apt        # rapts
-aient. -> E         # tapaient, flirtaient
-ain. -> 1           # pain, demain
-ain@* -> E:n@*      # haine, aubaine
-ain* -> 1:*         # sainte
-ais. -> E           # délirais, loupais
-aiss* -> Es:*       # paraisse, épaisse
-ais@* -> Ez:@*      # aise, chaisière
-ais* -> Es:*        # faisceau
-ail. -> ai          # ail, bail
-aill* -> ai:*       # aille, braille
-ai* -> E:*          # défaite, bouchonnai
-amm* -> am:*        # flamme, gamma
-am@* -> am:@*       # rame
-am* -> 2:*          # amplification, rampe
-an. -> 2            # bilan, clan
-ann* -> an:*        # anne, hanneton
-ant. -> 2           # enfant, confiant
-ante* -> 2t:e*      # confiante, infanterie
-an@* -> an:@*       # analyse, banal
-anh* -> an:*        # anhydride
-an* -> 2:*          # anse, antérieur
-as. -> a            # bas, foulas
-assent. -> as       # tassent, passent
-ass* -> as:*        # lassant, harassa
-as%* -> as:%*       # aspirer, pastèque
-as* -> az:*         # asie, rasoir
-au* -> o:*          # au, instaurer
-aw. -> o            # sqaw, outlaw
-aws. -> o           # sqaws, outlaws
-ay. -> E            # bray, spray
-ays. -> E           # gays, tramways
-a* -> a:*
+# Starting with ê
+êt* -> E:t*         # être, forêt
+ê* -> E:*
+
+# Starting with ë
+ë. ->
+ël* -> E:l*         # noël, Joël
+
+# Starting with f
+ff* -> f:*          # affamé, affaibli
+f* -> f:*           # fermer, frein
+
+# Starting with g
+g. ->               # sang
+ge. -> j            # grange, mange
+ge* -> j:e*         # manger, mangent
+gé* -> jE:*         # génial, congénital
+gi* -> ji:*         # girafe, plagier
+gn* -> n:*          # gagner, cagneux
+gy* -> j:y*         # gyroscope
+gu. -> gu           # aigu, ambigu
+gu%* -> g:u%*       # ambigus, lagune, régulier
+guë* -> gu:*        # aiguë
+gu* -> g:*          # guéri, guêt
+gg* -> g:*          # agglomération
+g* -> g:*
+
+# Starting with h
+h* -> :*            # hanter
 
 # Starting with i
 ic. -> ik           # pic
@@ -178,36 +257,29 @@ ixiè* -> iziE:*     # dixième, sixième
 ill* -> i:*         # vrille, pastille
 i* -> i:*
 
-# Starting with t
-t. ->               # îlot, évaluât
-ts. ->              # étreints, états
-tier* -> t:ier*     # parmentier, tiers
-ti@* -> s:i@*       # direction, patient
-ti* -> t:i*         # stomatite, strapontin
-top. -> top         # stop, top
-tt* -> t:*          # patte
-t* -> t:*
+# Starting with î
+î* -> i:*
 
-# Starting with n
-nn* -> n:*          # déconne, panne
-n* -> n:*
+# Starting with ï
+ï* -> i:*
 
-# Starting with r
-rr* -> r:*          # tintamarre, torrent
-r* -> r:*
+# Starting with j
+j* -> j:*           # jaune
 
-# Starting with u
-un. -> 1            # un, tribun
-us. -> u            # abus, intrus
-ussent. -> us       # fussent, voulussent
-uss* -> us:*        # fussiez
-us%* -> us:%*       # ustensile, rustique
-us* -> uz:*         # usine, rusé
-u* -> u:*
+# Starting with k
+k* -> k:*           # kiwi, kaki
 
 # Starting with l
 ll* -> l:*          # ballon, tulle
 l* -> l:*
+
+# Starting with m
+mm* -> m:*          # comme, comment
+m* -> m:*           # mérite, mentir
+
+# Starting with n
+nn* -> n:*          # déconne, panne
+n* -> n:*
 
 # Starting with o
 occ* -> ok:*        # occasion, occurence
@@ -234,37 +306,14 @@ où* -> U:*          # où
 oû* -> U:*
 o* -> o:*
 
-# Starting with d
-d. ->               # poid
-ds. ->              # poids
-dd* -> d:*          # addition
-d* -> d:*           # demain, direct
+# Starting with ô
+ô* -> o:*
 
-# Starting with c
-c. ->               # blanc
-ca* -> k:a*         # bécasse, cadeau
-cco* -> k:o*        # accorder, accordéon
-ccu* -> k:u*        # occuper
-cc* -> ks:*         # accéder
-ce* -> s:e*         # cerise
-c'* -> s:*          # c'est
-c’* -> s:*          # c’est
-chao* -> k:ao*      # chaos, chaotique
-chl* -> kl:*        # Chloé
-choe* -> k:oe*      # choeur
-chœ* -> k:oe*       # chœur
-chr* -> kr:*        # chrome, chrétien
-ch* -> C:*          # chômage, chercher
-ci* -> s:i*         # percil
-ck* -> k:*          # stock, déstockage
-coeu* -> k:oeu*     # coeur
-cœu* -> k:oeu*      # cœur
-compt* -> k3t:*     # compter, comptable
-co* -> k:o*         # concours, cordonnier
-cuei* -> ke:i*      # cueillette
-cu* -> k:u*         # cumin, percussion
-cy* -> s:y*         # cyclone, anticyclone
-c* -> k:*
+# Starting with ö
+ö* -> o:*
+
+# Starting with œ
+œ* -> e:*           # œuf, œuvre
 
 # Starting with p
 p. ->               # camp, loup
@@ -274,61 +323,56 @@ pp* -> p:*
 pays* -> pE:is*
 p* -> p:*
 
-# Starting with m
-mm* -> m:*          # comme, comment
-m* -> m:*           # mérite, mentir
-
-# Starting with é
-é. -> E             # mangé, plié
-éen. -> E1          # européen
-éens. -> E1         # européens
-équa* -> EkU:a*     # équateur, adéquation
-éss* -> Es:*        #
-és%* -> Es:%*       # téléspectateur, déspécialisation
-és. -> E            # tirés, floutés
-és* -> Ez:*         # désir, hésiter
-é* -> E:*           # éclairer, émincer
-
-# Starting with v
-v* -> v:*           # vivant, vert
-
 # Starting with q
 qur* -> ku:r*       # piqure
 qu* -> k:*          # quel, pique
 q* -> k:*           # cinq, coq
 
-# Starting with f
-ff* -> f:*          # affamé, affaibli
-f* -> f:*           # fermer, frein
+# Starting with r
+rr* -> r:*          # tintamarre, torrent
+r* -> r:*
 
-# Starting with b
-b. ->               # plomb
-bb* -> b:*          # sabbatique, scrabble
-b* -> b:*           # blond, barbelé
+# Starting with s
+s. ->               # mains, champs
+shu* -> z:u*        # déshumanisé, transhumance
+sh* -> C:*          # yiddish, shopping
+ss* -> s:*          # pass, stress
+st* -> st:*         # stress, style
+sci* -> s:i*        # science, conscience
+s* -> s:*
 
-# Starting with g
-g. ->               # sang
-ge. -> j            # grange, mange
-ge* -> j:e*         # manger, mangent
-gé* -> jE:*         # génial, congénital
-gi* -> ji:*         # girafe, plagier
-gn* -> n:*          # gagner, cagneux
-gy* -> j:y*         # gyroscope
-gu. -> gu           # aigu, ambigu
-gu%* -> g:u%*       # ambigus, lagune, régulier
-guë* -> gu:*        # aiguë
-gu* -> g:*          # guéri, guêt
-gg* -> g:*          # agglomération
-g* -> g:*
+# Starting with t
+t. ->               # îlot, évaluât
+ts. ->              # étreints, états
+tier* -> t:ier*     # parmentier, tiers
+ti@* -> s:i@*       # direction, patient
+ti* -> t:i*         # stomatite, strapontin
+top. -> top         # stop, top
+tt* -> t:*          # patte
+t* -> t:*
 
-# Starting with h
-h* -> :*            # hanter
+# Starting with u
+un. -> 1            # un, tribun
+us. -> u            # abus, intrus
+ussent. -> us       # fussent, voulussent
+uss* -> us:*        # fussiez
+us%* -> us:%*       # ustensile, rustique
+us* -> uz:*         # usine, rusé
+u* -> u:*
 
-# Starting with j
-j* -> j:*           # jaune
+# Starting with ù
+ù* -> u:*
 
-# Starting with à
-à* -> a:*           # delà
+# Starting with û
+û* -> u:*
+
+# Starting with v
+v* -> v:*           # vivant, vert
+
+# Starting with w
+w. ->               # show, bungalow
+ws. ->              # shows
+w* -> v:*           # wagon
 
 # Starting with x
 x. ->               # prix, choix
@@ -342,54 +386,10 @@ y* -> i:*           # yen
 # Starting with è
 è* -> E:*
 
-# Starting with ê
-êt* -> E:t*         # être, forêt
-ê* -> E:*
-
 # Starting with z
 zz* -> z:*          # pizza
 z* -> z:*
 
-# Starting with w
-w. ->               # show, bungalow
-ws. ->              # shows
-w* -> v:*           # wagon
-
-# Starting with ç
-ç* -> s:*           # ça
-
-# Starting with ù
-ù* -> u:*
-
-# Starting with k
-k* -> k:*           # kiwi, kaki
-
-# Starting with î
-î* -> i:*
-
-# Starting with œ
-œ* -> e:*           # œuf, œuvre
-
-# Starting with ï
-ï* -> i:*
-
-# Starting with ë
-ë. ->
-ël* -> E:l*         # noël, Joël
-
-# Starting with ô
-ô* -> o:*
-
-# Starting with ö
-ö* -> o:*
-
-# Starting with û
-û* -> u:*
-
 # Apostroph is ignored/silent
 '* -> :*
 ’* -> :*
-
-# Starting with â
-ât* -> a:t*         # âtre
-â* -> a:*
