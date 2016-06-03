@@ -27,6 +27,7 @@
 .cerf. -> sEr       # cerf
 .cerfs. -> sEr      # cerfs
 .de. -> de          # de
+.exu* -> Ekz:*      # exulter, exubérance
 .emm* -> 2m:*       # emmener, emmagasiner
 .est. -> E          # est
 .es. -> E           # es
@@ -94,7 +95,8 @@ eussent. -> us      # eussent
 euss* -> us:*       # eusse, eussiez
 eus@* -> ez:@*      # laguneuse
 eu* -> e:*          # bleuté
-ex@* -> Ekz:@*      # exercice, exécuter
+exu* -> Eksu:*      # sexuel, plexus
+ex@* -> Ekz:@*      # exercice, exécuter, exalter, exulter
 ex* -> Eks:*        # ex, index
 ey. -> E            # poney
 ey%* -> E:%*        # trolleybus
