@@ -125,6 +125,8 @@ co* -> k:o*         # concours, cordonnier
 cuei* -> ke:i*      # cueillette
 cu* -> k:u*         # cumin, percussion
 cy* -> s:y*         # cyclone, anticyclone
+c'* -> :s*          # c'est
+c’* -> :s*          # c’est
 c* -> k:*
 
 # Starting with ç
@@ -134,6 +136,8 @@ c* -> k:*
 d. ->               # poid
 ds. ->              # poids
 dd* -> d:*          # addition
+d'* -> :d*          # d'habitude
+d’* -> :d*          # d’ordinaire
 d* -> d:*           # demain, direct
 
 # Starting with e
@@ -345,6 +349,8 @@ sh* -> C:*          # yiddish, shopping
 ss* -> s:*          # pass, stress
 st* -> st:*         # stress, style
 sci* -> s:i*        # science, conscience
+s'* -> :s*          # s'essuyer
+s’* -> :s*          # s’équiper
 s* -> s:*
 
 # Starting with t
@@ -355,6 +361,8 @@ ti@* -> s:i@*       # direction, patient
 ti* -> t:i*         # stomatite, strapontin
 top. -> top         # stop, top
 tt* -> t:*          # patte
+t'* -> :t*          # t'essuyer
+t’* -> :t*          # t’équiper
 t* -> t:*
 
 # Starting with u
