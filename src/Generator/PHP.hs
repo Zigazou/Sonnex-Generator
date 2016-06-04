@@ -13,6 +13,7 @@ module Generator.PHP (phpRules) where
 
 import Data.FileEmbed (embedStringFile)
 import Data.List (groupBy, partition, elemIndex, sortOn)
+import Data.Maybe (fromMaybe)
 
 import Type.Rule ( Rule(Rule)
                  , Trigger(Trigger)
@@ -31,20 +32,16 @@ frequentLetters = "esaitnrulodcpmévqfbghjàxyèêzwçùkîœïëôöû'’â"
 
 -- | Give a weight to a group of `Rule` according to letters frequency
 groupWeight :: [Rule] -> Int
-groupWeight ((Rule (Trigger _ (Letter a:_) _ _) _):_) =
-    case elemIndex a frequentLetters of
-         Just i -> i
-         Nothing -> 1000
+groupWeight (Rule (Trigger _ (Letter a:_) _ _) _:_) =
+    fromMaybe 1000 (elemIndex a frequentLetters)
 groupWeight _ = 1000
 
 -- | Give a weight to a subgroup of `Rule` according to letters frequency
 groupWeight2 :: [Rule] -> Int
-groupWeight2 ((Rule (Trigger _ (_:Letter a:_) _ _) _):_) =
-    case elemIndex a frequentLetters of
-         Just i -> i
-         Nothing -> 900
-groupWeight2 ((Rule (Trigger _ [_] _ EndOfWord) _):_) = (-1)
-groupWeight2 ((Rule (Trigger _ [_] _ Remains) _):_) = 1000
+groupWeight2 (Rule (Trigger _ (_:Letter a:_) _ _) _:_) =
+    fromMaybe 9000 (elemIndex a frequentLetters)
+groupWeight2 (Rule (Trigger _ [_] _ EndOfWord) _:_) = -1
+groupWeight2 (Rule (Trigger _ [_] _ Remains) _:_) = 1000
 groupWeight2 _ = 950
 
 -- | Checks if two `Rule`’s `Trigger` start with the same letter.
@@ -71,12 +68,12 @@ phpRules rs = concat
     , utils
     , "function _sonnex_sonx0($st) {\n"
     , intro0
-    , (concat . map phpRule) frs
+    , concatMap phpRule frs
     , outro0
     , "}\n\n"
     , "function _sonnex_sonx($st) {\n"
     , intro
-    , (concat . map phpRules') srs
+    , concatMap phpRules' srs
     , outro
     , "}\n\n"
     , sonnx
@@ -97,21 +94,20 @@ phpRules rs = concat
 -- | Compile a group of `Rule` into PHP code
 phpRules' :: [Rule] -> String
 phpRules' rs = "  if($st1 == \"" ++ first rs ++ "\") {\n"
-            ++ ( concat
-               . map optimize
+            ++ ( concatMap optimize
                . sortOn groupWeight2
                . groupBy sameStart2
                ) rs
             ++ "  }\n"
-    where first ((Rule (Trigger _ (Letter a:_) _ _) _):_) = [a]
+    where first (Rule (Trigger _ (Letter a:_) _ _) _:_) = [a]
           first _ = []
-          second ((Rule (Trigger _ (_:Letter a:_) _ _) _):_) = [a]
+          second (Rule (Trigger _ (_:Letter a:_) _ _) _:_) = [a]
           second _ = []
           -- Optimize subgroups
           optimize [r] = phpRule r
           optimize [r1, r2] = phpRule r1 ++ phpRule r2
           optimize rs' = "  if($sc2 == \"" ++ second rs' ++ "\") {\n"
-                      ++ (concat . map phpRule) rs'
+                      ++ concatMap phpRule rs'
                       ++ "  }\n"
 
 -- | Compile a single `Rule` into PHP code

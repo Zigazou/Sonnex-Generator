@@ -114,11 +114,11 @@ trigger = do
     letters <- many1 (oneOf letterChars)
     ph <- optionMaybe placeholder
     end <- next
-    return $ Trigger { trStart = st
-                     , trLetters = Letter <$> letters
-                     , trPlaceHolder = ph
-                     , trEnd = end
-                     }
+    return Trigger { trStart = st
+                   , trLetters = Letter <$> letters
+                   , trPlaceHolder = ph
+                   , trEnd = end
+                   }
 
 {-| Parse a `PlaceHolder`
 -}
@@ -144,6 +144,6 @@ action = do
             return $ Just $ Recursive (Letter <$> letters) ph
         Nothing -> return Nothing
 
-    return $ Action { acSounds = Sound <$> sounds
-                    , acRecursive = recursive
-                    }
+    return Action { acSounds = Sound <$> sounds
+                  , acRecursive = recursive
+                  }
