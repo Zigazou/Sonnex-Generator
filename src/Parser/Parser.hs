@@ -84,12 +84,8 @@ rspaces = many (oneOf " \t")
 -}
 rule :: GenParser Char st Rule
 rule = do
-    t <- trigger
-    _ <- rspaces
-    _ <- string "->"
-    _ <- rspaces
-    a <- action
-    _ <- rspaces
+    t <- trigger <* rspaces <* string "->" <* rspaces
+    a <- action <* rspaces
     return $ Rule t a
 
 {-| Parse an `EndOfWord` or a `Remains`
