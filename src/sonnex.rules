@@ -27,6 +27,9 @@
 .cerf. -> sEr       # cerf
 .cerfs. -> sEr      # cerfs
 .de. -> de          # de
+.eno* -> 2:no*      # enorgueillir
+.ennem* -> En:em*   # ennemi, ennemis
+.enn* -> 2n:*       # ennoblir, ennuyé
 .exu* -> Ekz:*      # exulter, exubérance
 .emm* -> 2m:*       # emmener, emmagasiner
 .est. -> E          # est
@@ -203,6 +206,9 @@ e* -> e:*
 és. -> E            # tirés, floutés
 és* -> Ez:*         # désir, hésiter
 é* -> E:*           # éclairer, émincer
+
+# Starting with è
+è* -> E:*
 
 # Starting with ê
 êt* -> E:t*         # être, forêt
@@ -382,9 +388,6 @@ x* -> ks:*
 
 # Starting with y
 y* -> i:*           # yen
-
-# Starting with è
-è* -> E:*
 
 # Starting with z
 zz* -> z:*          # pizza
